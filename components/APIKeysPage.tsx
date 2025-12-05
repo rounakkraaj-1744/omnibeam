@@ -20,7 +20,7 @@ export function APIKeysPage() {
     {
       id: '1',
       name: 'Production API Key',
-      key: 'sk_newapikey_1234567890abcdefghijklmnopqrstuvwxyz',
+      key: 'xxxxxxxxxxxyyyyyyyyyyyyyyyyy',
       created: '2025-11-15',
       lastUsed: '2 hours ago',
       status: 'active'
@@ -28,7 +28,7 @@ export function APIKeysPage() {
     {
       id: '2',
       name: 'Development API Key',
-      key: 'sk_newapikey_abcdefghijklmnopqrstuvwxyz1234567890',
+      key: 'xxxxxxxxxxxyyyyyyyyyyyyyyyyy',
       created: '2025-11-10',
       lastUsed: '1 day ago',
       status: 'active'
@@ -36,7 +36,7 @@ export function APIKeysPage() {
     {
       id: '3',
       name: 'Staging API Key',
-      key: 'sk_newapikey_zyxwvutsrqponmlkjihgfedcba0987654321',
+      key: 'xxxxxxxxxxxyyyyyyyyyyyyyyyyy',
       created: '2025-10-28',
       lastUsed: 'Never',
       status: 'inactive'
