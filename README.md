@@ -19,7 +19,7 @@
 
 ## 🏗️ Architecture
 
-NotifyOS uses a queue-based architecture for reliable message delivery [web:9]:
+Omnibeam uses a queue-based architecture for reliable message delivery [web:9]:
 
 ```plaintext
     Client Request
