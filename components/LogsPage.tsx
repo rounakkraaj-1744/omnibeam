@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Select } from '@/components/ui/select';
+import { Select, SelectTrigger, SelectContent, SelectValue, SelectItem } from '@/components/ui/select';
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@/components/ui/table';
 import { Mail, MessageSquare, Bell, Smartphone, ChevronDown, ChevronRight, Filter } from 'lucide-react';
 
@@ -137,37 +137,37 @@ export function LogsPage() {
 
       {/* Filters */}
       <Card className="mb-6">
-        <div className="flex items-center gap-4 flex-wrap">
+        <div className="flex items-center gap-4 flex-wrap p-4">
           <div className="flex items-center gap-2">
             <Filter className="w-5 h-5 text-neutral-500" />
             <span className="text-sm text-neutral-400">Filters:</span>
           </div>
-          
-          <Select
-            options={[
-              { value: 'all', label: 'All Channels' },
-              { value: 'email', label: 'Email' },
-              { value: 'slack', label: 'Slack' },
-              { value: 'push', label: 'Push' },
-              { value: 'sms', label: 'SMS' }
-            ]}
-            value={channelFilter}
-            onChange={(e) => setChannelFilter(e.target.value)}
-            className="w-40"
-          />
 
-          <Select
-            options={[
-              { value: 'all', label: 'All Status' },
-              { value: 'success', label: 'Success' },
-              { value: 'failed', label: 'Failed' },
-              { value: 'retrying', label: 'Retrying' },
-              { value: 'pending', label: 'Pending' }
-            ]}
-            value={statusFilter}
-            onChange={(e) => setStatusFilter(e.target.value)}
-            className="w-40"
-          />
+          <Select value={channelFilter} onValueChange={setChannelFilter}>
+            <SelectTrigger className="w-40">
+              <SelectValue placeholder="All Channels" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">All Channels</SelectItem>
+              <SelectItem value="email">Email</SelectItem>
+              <SelectItem value="slack">Slack</SelectItem>
+              <SelectItem value="push">Push</SelectItem>
+              <SelectItem value="sms">SMS</SelectItem>
+            </SelectContent>
+          </Select>
+
+          <Select value={statusFilter} onValueChange={setStatusFilter}>
+            <SelectTrigger className="w-40">
+              <SelectValue placeholder="All Status" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">All Status</SelectItem>
+              <SelectItem value="success">Success</SelectItem>
+              <SelectItem value="failed">Failed</SelectItem>
+              <SelectItem value="retrying">Retrying</SelectItem>
+              <SelectItem value="pending">Pending</SelectItem>
+            </SelectContent>
+          </Select>
 
           <div className="ml-auto text-sm text-neutral-500">
             Showing {filteredLogs.length} of {logs.length} logs
@@ -221,7 +221,7 @@ export function LogsPage() {
                   <TableCell className="max-w-[250px] truncate">{log.message}</TableCell>
                   <TableCell className="text-neutral-500">{log.timestamp}</TableCell>
                 </TableRow>
-                
+
                 {isExpanded && (
                   <TableRow>
                     <TableCell colSpan={7} className="bg-[#0a0a0a] border-t-0">

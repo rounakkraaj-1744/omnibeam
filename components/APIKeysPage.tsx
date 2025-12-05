@@ -20,7 +20,7 @@ export function APIKeysPage() {
     {
       id: '1',
       name: 'Production API Key',
-      key: 'sk_live_1234567890abcdefghijklmnopqrstuvwxyz',
+      key: 'sk_newapikey_1234567890abcdefghijklmnopqrstuvwxyz',
       created: '2025-11-15',
       lastUsed: '2 hours ago',
       status: 'active'
@@ -28,7 +28,7 @@ export function APIKeysPage() {
     {
       id: '2',
       name: 'Development API Key',
-      key: 'sk_test_abcdefghijklmnopqrstuvwxyz1234567890',
+      key: 'sk_newapikey_abcdefghijklmnopqrstuvwxyz1234567890',
       created: '2025-11-10',
       lastUsed: '1 day ago',
       status: 'active'
@@ -36,7 +36,7 @@ export function APIKeysPage() {
     {
       id: '3',
       name: 'Staging API Key',
-      key: 'sk_test_zyxwvutsrqponmlkjihgfedcba0987654321',
+      key: 'sk_newapikey_zyxwvutsrqponmlkjihgfedcba0987654321',
       created: '2025-10-28',
       lastUsed: 'Never',
       status: 'inactive'
@@ -125,8 +125,8 @@ export function APIKeysPage() {
                   <code className="flex-1 px-4 py-2 bg-neutral-900 border border-neutral-800 rounded-lg text-sm text-emerald-400">
                     {newlyCreatedKey}
                   </code>
-                  <Button 
-                    variant="ghost" 
+                  <Button
+                    variant="ghost"
                     size="sm"
                     onClick={() => copyToClipboard(newlyCreatedKey)}
                   >
@@ -135,7 +135,7 @@ export function APIKeysPage() {
                   </Button>
                 </div>
               </div>
-              <button 
+              <button
                 onClick={() => setNewlyCreatedKey(null)}
                 className="text-neutral-500 hover:text-neutral-300 transition-colors"
               >
@@ -150,7 +150,7 @@ export function APIKeysPage() {
       <div className="space-y-4">
         {apiKeys.map((apiKey) => {
           const isVisible = visibleKeys.has(apiKey.id);
-          
+
           return (
             <Card key={apiKey.id}>
               <CardContent>
@@ -159,7 +159,7 @@ export function APIKeysPage() {
                     <div className="w-10 h-10 bg-[#4F46E5]/10 border border-[#4F46E5]/20 rounded-lg flex items-center justify-center flex-shrink-0">
                       <Key className="w-5 h-5 text-[#4F46E5]" />
                     </div>
-                    
+
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-3 mb-2">
                         <h4 className="text-neutral-100">{apiKey.name}</h4>
@@ -167,7 +167,7 @@ export function APIKeysPage() {
                           {apiKey.status}
                         </Badge>
                       </div>
-                      
+
                       <div className="flex items-center gap-2 mb-3">
                         <code className="px-3 py-1.5 bg-neutral-900 border border-neutral-800 rounded text-sm text-neutral-300 font-mono">
                           {isVisible ? apiKey.key : maskKey(apiKey.key)}
@@ -185,7 +185,7 @@ export function APIKeysPage() {
                           <Copy className="w-4 h-4" />
                         </button>
                       </div>
-                      
+
                       <div className="flex items-center gap-4 text-xs text-neutral-500">
                         <span>Created {apiKey.created}</span>
                         <span>•</span>
@@ -193,7 +193,7 @@ export function APIKeysPage() {
                       </div>
                     </div>
                   </div>
-                  
+
                   <Button
                     variant="ghost"
                     size="sm"

@@ -22,8 +22,8 @@ export function SendNotificationPage() {
   ];
 
   const toggleChannel = (channelId: string) => {
-    setSelectedChannels(prev => 
-      prev.includes(channelId) 
+    setSelectedChannels(prev =>
+      prev.includes(channelId)
         ? prev.filter(c => c !== channelId)
         : [...prev, channelId]
     );
@@ -60,17 +60,16 @@ export function SendNotificationPage() {
                 {channels.map((channel) => {
                   const Icon = channel.icon;
                   const isSelected = selectedChannels.includes(channel.id);
-                  
+
                   return (
                     <button
                       key={channel.id}
                       type="button"
                       onClick={() => toggleChannel(channel.id)}
-                      className={`relative p-4 rounded-lg border-2 transition-all ${
-                        isSelected 
-                          ? `${channel.bgColor} ${channel.borderColor}` 
+                      className={`relative p-4 rounded-lg border-2 transition-all ${isSelected
+                          ? `${channel.bgColor} ${channel.borderColor}`
                           : 'bg-neutral-900 border-neutral-800 hover:border-neutral-700'
-                      }`}
+                        }`}
                     >
                       <div className="flex flex-col items-center gap-2">
                         <Icon className={`w-6 h-6 ${isSelected ? channel.color : 'text-neutral-500'}`} />
@@ -146,7 +145,7 @@ export function SendNotificationPage() {
                     required={selectedChannels.includes('email')}
                   />
                 )}
-                
+
                 {selectedChannels.includes('slack') && (
                   <Input
                     label="Slack User or Channel"
@@ -156,7 +155,7 @@ export function SendNotificationPage() {
                     required={selectedChannels.includes('slack')}
                   />
                 )}
-                
+
                 {selectedChannels.includes('push') && (
                   <div className="p-4 bg-amber-500/5 border border-amber-500/10 rounded-lg">
                     <p className="text-sm text-neutral-300">
@@ -164,7 +163,7 @@ export function SendNotificationPage() {
                     </p>
                   </div>
                 )}
-                
+
                 {selectedChannels.includes('sms') && (
                   <Input
                     label="Phone Number"
