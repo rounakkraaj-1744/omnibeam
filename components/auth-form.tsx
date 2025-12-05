@@ -9,7 +9,10 @@ import { Mail, Lock, Sparkles, ArrowRight } from "lucide-react"
 type AuthMode = "login" | "signup"
 type AuthMethod = "password" | "magiclink"
 
+import { useRouter } from "next/navigation"
+
 export function AuthForm() {
+    const router = useRouter()
     const [mode, setMode] = useState<AuthMode>("login")
     const [method, setMethod] = useState<AuthMethod>("password")
     const [email, setEmail] = useState("")
@@ -26,10 +29,12 @@ export function AuthForm() {
 
         console.log({ mode, method, email, password, name })
         setIsLoading(false)
+        router.push("/dashboard")
     }
 
     const handleGoogleAuth = () => {
         console.log("Google auth initiated")
+        router.push("/dashboard")
     }
 
     return (
@@ -58,8 +63,8 @@ export function AuthForm() {
                             <button
                                 onClick={() => setMode("login")}
                                 className={`flex-1 py-2.5 px-4 rounded-lg font-medium text-sm transition-all duration-200 ${mode === "login"
-                                        ? "bg-white dark:bg-zinc-700 text-zinc-900 dark:text-white shadow-md"
-                                        : "text-zinc-600 dark:text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
+                                    ? "bg-white dark:bg-zinc-700 text-zinc-900 dark:text-white shadow-md"
+                                    : "text-zinc-600 dark:text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
                                     }`}
                             >
                                 Sign In
@@ -67,8 +72,8 @@ export function AuthForm() {
                             <button
                                 onClick={() => setMode("signup")}
                                 className={`flex-1 py-2.5 px-4 rounded-lg font-medium text-sm transition-all duration-200 ${mode === "signup"
-                                        ? "bg-white dark:bg-zinc-700 text-zinc-900 dark:text-white shadow-md"
-                                        : "text-zinc-600 dark:text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
+                                    ? "bg-white dark:bg-zinc-700 text-zinc-900 dark:text-white shadow-md"
+                                    : "text-zinc-600 dark:text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
                                     }`}
                             >
                                 Sign Up
@@ -120,8 +125,8 @@ export function AuthForm() {
                             <button
                                 onClick={() => setMethod("password")}
                                 className={`flex-1 py-2 px-3 rounded-lg text-sm font-medium transition-all duration-200 ${method === "password"
-                                        ? "bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white"
-                                        : "text-zinc-600 dark:text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-800/50"
+                                    ? "bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white"
+                                    : "text-zinc-600 dark:text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-800/50"
                                     }`}
                             >
                                 <Lock className="w-4 h-4 inline mr-1.5" />
@@ -130,8 +135,8 @@ export function AuthForm() {
                             <button
                                 onClick={() => setMethod("magiclink")}
                                 className={`flex-1 py-2 px-3 rounded-lg text-sm font-medium transition-all duration-200 ${method === "magiclink"
-                                        ? "bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white"
-                                        : "text-zinc-600 dark:text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-800/50"
+                                    ? "bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white"
+                                    : "text-zinc-600 dark:text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-800/50"
                                     }`}
                             >
                                 <Sparkles className="w-4 h-4 inline mr-1.5" />

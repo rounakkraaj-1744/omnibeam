@@ -2,11 +2,9 @@ import React from 'react';
 import { Mail, MessageSquare, Bell, Smartphone, Zap, BarChart3, Key, RefreshCw } from 'lucide-react';
 import { Button } from './ui/button';
 
-interface LandingPageProps {
-  onGetStarted: () => void;
-}
+import Link from 'next/link';
 
-export function LandingPage({ onGetStarted }: LandingPageProps) {
+export function LandingPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950">
       {/* Header */}
@@ -22,9 +20,11 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
             <a href="#features" className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-800 dark:text-zinc-200 transition-colors">Features</a>
             <a href="#docs" className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-800 dark:text-zinc-200 transition-colors">Docs</a>
             <a href="#pricing" className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-800 dark:text-zinc-200 transition-colors">Pricing</a>
-            <Button variant="ghost" size="sm" onClick={onGetStarted}>
-              Sign In
-            </Button>
+            <Link href="/login">
+              <Button variant="ghost" size="sm">
+                Sign In
+              </Button>
+            </Link>
           </nav>
         </div>
       </header>
@@ -36,19 +36,21 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
             <Zap className="w-4 h-4 text-indigo-500" />
             <span className="text-sm font-medium text-indigo-500">Now in Public Beta</span>
           </div>
-          
+
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-transparent leading-tight">
             Send notifications across Email, Slack, Push & SMS with a single API
           </h1>
-          
+
           <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 mb-10 max-w-2xl mx-auto leading-relaxed">
             OmniBeam is a multi-channel notification platform that routes your messages through Email, Slack, Push Notifications, and SMS with programmable retries and real-time delivery tracking.
           </p>
 
           <div className="flex items-center justify-center gap-4 flex-wrap">
-            <Button size="lg" onClick={onGetStarted}>
-              Get Started
-            </Button>
+            <Link href="/login">
+              <Button size="lg">
+                Get Started
+              </Button>
+            </Link>
             <Button variant="ghost" size="lg">
               View Docs
             </Button>
@@ -156,9 +158,11 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
           <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-8 max-w-2xl mx-auto">
             Join thousands of developers using OmniBeam to power their notification infrastructure.
           </p>
-          <Button size="lg" onClick={onGetStarted}>
-            Start Building Today
-          </Button>
+          <Link href="/login">
+            <Button size="lg">
+              Start Building Today
+            </Button>
+          </Link>
         </div>
       </section>
 

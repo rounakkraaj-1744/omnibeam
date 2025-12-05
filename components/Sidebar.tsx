@@ -1,19 +1,20 @@
+"use client"
+
 import React from 'react';
 import { Home, Radio, Send, FileText, Key, User, Zap } from 'lucide-react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
-interface SidebarProps {
-  currentPage: string;
-  onNavigate: (page: string) => void;
-}
+export function Sidebar() {
+  const pathname = usePathname();
 
-export function Sidebar({ currentPage, onNavigate }: SidebarProps) {
   const navItems = [
-    { id: 'dashboard', label: 'Dashboard', icon: Home },
-    { id: 'channels', label: 'Channels', icon: Radio },
-    { id: 'send', label: 'Send Notification', icon: Send },
-    { id: 'logs', label: 'Logs', icon: FileText },
-    { id: 'api-keys', label: 'API Keys', icon: Key },
-    { id: 'account', label: 'Account', icon: User },
+    { id: 'dashboard', label: 'Dashboard', href: '/dashboard', icon: Home },
+    { id: 'channels', label: 'Channels', href: '/dashboard/channels', icon: Radio },
+    { id: 'send', label: 'Send Notification', href: '/dashboard/send', icon: Send },
+    { id: 'logs', label: 'Logs', href: '/dashboard/logs', icon: FileText },
+    { id: 'api-keys', label: 'API Keys', href: '/dashboard/api-keys', icon: Key },
+    { id: 'account', label: 'Account', href: '/dashboard/account', icon: User },
   ];
 
   return (
@@ -31,20 +32,22 @@ export function Sidebar({ currentPage, onNavigate }: SidebarProps) {
         <ul className="space-y-1">
           {navItems.map((item) => {
             const Icon = item.icon;
-            const isActive = currentPage === item.id;
+            // Check if current path matches the item href exactly or if it's a subpath (optional, for stricter matching use exact match)
+            // For dashboard root, we want exact match mainly, but let's stick to simple logic first.
+            const isActive = pathname === item.href;
 
             return (
               <li key={item.id}>
-                <button
-                  onClick={() => onNavigate(item.id)}
+                <Link
+                  href={item.href}
                   className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all ${isActive
-                      ? 'bg-indigo-500 text-white shadow-sm'
-                      : 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-900'
+                    ? 'bg-indigo-500 text-white shadow-sm'
+                    : 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-900'
                     }`}
                 >
                   <Icon className="w-5 h-5 shrink-0" />
                   <span>{item.label}</span>
-                </button>
+                </Link>
               </li>
             );
           })}
