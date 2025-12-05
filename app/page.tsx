@@ -9,6 +9,7 @@ import { ChannelsPage } from '@/components/ChannelsPage';
 import { SendNotificationPage } from '@/components/SendNotificationPage';
 import { LogsPage } from '@/components/LogsPage';
 import { APIKeysPage } from '@/components/APIKeysPage';
+import { AccountPage } from '@/components/AccountPage';
 
 type AppView = 'landing' | 'login' | 'dashboard';
 type DashboardPage = 'dashboard' | 'channels' | 'send' | 'logs' | 'api-keys' | 'account';
@@ -48,19 +49,7 @@ export default function App() {
       {currentPage === 'send' && <SendNotificationPage />}
       {currentPage === 'logs' && <LogsPage />}
       {currentPage === 'api-keys' && <APIKeysPage />}
-      {currentPage === 'account' && (
-        <div className="p-8">
-          <div className="mb-8">
-            <h1 className="mb-2 text-neutral-100">Account Settings</h1>
-            <p className="text-neutral-400">Manage your account preferences</p>
-          </div>
-          <div className="max-w-2xl">
-            <div className="bg-[#111111] border border-neutral-900 rounded-xl p-8 text-center">
-              <p className="text-neutral-400">Account settings coming soon...</p>
-            </div>
-          </div>
-        </div>
-      )}
+      {currentPage === 'account' && <AccountPage />}
     </DashboardLayout>
   );
 }
