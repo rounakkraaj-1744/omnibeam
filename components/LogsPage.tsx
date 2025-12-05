@@ -106,11 +106,11 @@ export function LogsPage() {
 
   const getChannelIcon = (channel: string) => {
     switch (channel) {
-      case 'email': return { Icon: Mail, color: 'text-blue-400', bg: 'bg-blue-500/10' };
-      case 'slack': return { Icon: MessageSquare, color: 'text-purple-400', bg: 'bg-purple-500/10' };
-      case 'push': return { Icon: Bell, color: 'text-amber-400', bg: 'bg-amber-500/10' };
-      case 'sms': return { Icon: Smartphone, color: 'text-emerald-400', bg: 'bg-emerald-500/10' };
-      default: return { Icon: Mail, color: 'text-zinc-600 dark:text-zinc-400', bg: 'bg-zinc-500/10' };
+      case 'email': return { Icon: Mail, color: 'text-blue-500 dark:text-blue-400', bg: 'bg-blue-500/10' };
+      case 'slack': return { Icon: MessageSquare, color: 'text-purple-500 dark:text-purple-400', bg: 'bg-purple-500/10' };
+      case 'push': return { Icon: Bell, color: 'text-amber-500 dark:text-amber-400', bg: 'bg-amber-500/10' };
+      case 'sms': return { Icon: Smartphone, color: 'text-emerald-500 dark:text-emerald-400', bg: 'bg-emerald-500/10' };
+      default: return { Icon: Mail, color: 'text-muted-foreground', bg: 'bg-muted/50' };
     }
   };
 
@@ -133,16 +133,16 @@ export function LogsPage() {
   return (
     <div className="p-8">
       <div className="mb-8">
-        <h1 className="mb-2 text-zinc-900 dark:text-zinc-100">Delivery Logs</h1>
-        <p className="text-zinc-600 dark:text-zinc-400">Real-time notification tracking and monitoring</p>
+        <h1 className="mb-2 text-foreground text-2xl font-bold">Delivery Logs</h1>
+        <p className="text-muted-foreground">Real-time notification tracking and monitoring</p>
       </div>
 
       {/* Filters */}
       <Card className="mb-6">
         <div className="flex items-center gap-4 flex-wrap p-4">
           <div className="flex items-center gap-2">
-            <Filter className="w-5 h-5 text-zinc-500" />
-            <span className="text-sm text-zinc-600 dark:text-zinc-400">Filters:</span>
+            <Filter className="w-5 h-5 text-muted-foreground" />
+            <span className="text-sm text-muted-foreground">Filters:</span>
           </div>
 
           <Select value={channelFilter} onValueChange={setChannelFilter}>
@@ -171,7 +171,7 @@ export function LogsPage() {
             </SelectContent>
           </Select>
 
-          <div className="ml-auto text-sm text-zinc-500">
+          <div className="ml-auto text-sm text-muted-foreground">
             Showing {filteredLogs.length} of {logs.length} logs
           </div>
         </div>
@@ -197,12 +197,12 @@ export function LogsPage() {
 
             return (
               <React.Fragment key={log.id}>
-                <TableRow onClick={() => setExpandedRow(isExpanded ? null : log.id)}>
+                <TableRow onClick={() => setExpandedRow(isExpanded ? null : log.id)} className="cursor-pointer hover:bg-muted/50">
                   <TableCell className="w-8">
                     {isExpanded ? (
-                      <ChevronDown className="w-4 h-4 text-zinc-500" />
+                      <ChevronDown className="w-4 h-4 text-muted-foreground" />
                     ) : (
-                      <ChevronRight className="w-4 h-4 text-zinc-500" />
+                      <ChevronRight className="w-4 h-4 text-muted-foreground" />
                     )}
                   </TableCell>
                   <TableCell>
@@ -210,7 +210,7 @@ export function LogsPage() {
                       <div className={`w-8 h-8 ${bg} rounded-lg flex items-center justify-center`}>
                         <Icon className={`w-4 h-4 ${color}`} />
                       </div>
-                      <span className="capitalize">{log.channel}</span>
+                      <span className="capitalize text-foreground font-medium">{log.channel}</span>
                     </div>
                   </TableCell>
                   <TableCell>
@@ -218,18 +218,18 @@ export function LogsPage() {
                       {log.status}
                     </Badge>
                   </TableCell>
-                  <TableCell>{log.attempts}</TableCell>
-                  <TableCell className="max-w-[200px] truncate">{log.recipient}</TableCell>
-                  <TableCell className="max-w-[250px] truncate">{log.message}</TableCell>
-                  <TableCell className="text-zinc-500">{log.timestamp}</TableCell>
+                  <TableCell className="text-foreground">{log.attempts}</TableCell>
+                  <TableCell className="max-w-[200px] truncate text-foreground">{log.recipient}</TableCell>
+                  <TableCell className="max-w-[250px] truncate text-foreground">{log.message}</TableCell>
+                  <TableCell className="text-muted-foreground">{log.timestamp}</TableCell>
                 </TableRow>
 
                 {isExpanded && (
-                  <TableRow>
-                    <TableCell colSpan={7} className="bg-white dark:bg-zinc-950 border-t-0">
-                      <div className="py-4">
-                        <h4 className="mb-3 text-zinc-900 dark:text-zinc-100">Provider Response</h4>
-                        <pre className="p-4 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg text-xs text-zinc-700 dark:text-zinc-300 overflow-x-auto">
+                  <TableRow className="hover:bg-transparent">
+                    <TableCell colSpan={7} className="bg-muted/20 border-t-0">
+                      <div className="py-4 px-2">
+                        <h4 className="mb-3 text-foreground font-semibold">Provider Response</h4>
+                        <pre className="p-4 bg-muted border border-border rounded-lg text-xs text-muted-foreground overflow-x-auto">
                           {JSON.stringify(log.providerResponse, null, 2)}
                         </pre>
                       </div>

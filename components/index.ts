@@ -1,4 +1,4 @@
-export { AuthForm } from "./auth-form"
+export { default as AuthForm } from "./auth-form";
 export { Button } from "./ui/button"
 export { Input } from "./ui/input"
 export { Label } from "./ui/label"

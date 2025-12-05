@@ -73,20 +73,20 @@ export default function AuthForm() {
     }
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-zinc-50 via-blue-50 to-indigo-100 dark:from-zinc-950 dark:via-zinc-900 dark:to-indigo-950 p-4">
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-muted to-primary/10 p-4">
             <div className="w-full max-w-md">
                 {/* Card Container */}
-                <div className="bg-white/80 dark:bg-zinc-100 dark:bg-zinc-900/80 backdrop-blur-xl rounded-2xl shadow-2xl border border-zinc-200/50 dark:border-zinc-700/50 overflow-hidden">
+                <div className="bg-card/80 backdrop-blur-xl rounded-2xl shadow-2xl border border-border/50 overflow-hidden">
                     {/* Header with Toggle */}
                     <div className="p-8 pb-6">
                         <div className="text-center mb-8">
-                            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 mb-4 shadow-lg shadow-blue-500/30">
-                                <Sparkles className="w-8 h-8 text-white" />
+                            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-violet-600 mb-4 shadow-lg shadow-primary/30">
+                                <Sparkles className="w-8 h-8 text-primary-foreground" />
                             </div>
-                            <h1 className="text-3xl font-bold bg-gradient-to-r from-zinc-900 to-zinc-700 dark:from-white dark:to-zinc-300 bg-clip-text text-transparent">
+                            <h1 className="text-3xl font-bold bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent">
                                 Welcome Back
                             </h1>
-                            <p className="text-zinc-600 dark:text-zinc-600 dark:text-zinc-400 mt-2">
+                            <p className="text-muted-foreground mt-2">
                                 {mode === "login"
                                     ? "Sign in to continue your journey"
                                     : "Create an account to get started"}
@@ -94,12 +94,12 @@ export default function AuthForm() {
                         </div>
 
                         {/* Mode Toggle */}
-                        <div className="flex gap-2 p-1 bg-zinc-100 dark:bg-zinc-800 rounded-xl mb-6">
+                        <div className="flex gap-2 p-1 bg-muted rounded-xl mb-6">
                             <button
                                 onClick={() => setMode("login")}
                                 className={`flex-1 py-2.5 px-4 rounded-lg font-medium text-sm transition-all duration-200 ${mode === "login"
-                                    ? "bg-white dark:bg-zinc-700 text-zinc-900 dark:text-white shadow-md"
-                                    : "text-zinc-600 dark:text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
+                                    ? "bg-background text-foreground shadow-sm"
+                                    : "text-muted-foreground hover:text-foreground"
                                     }`}
                             >
                                 Sign In
@@ -107,8 +107,8 @@ export default function AuthForm() {
                             <button
                                 onClick={() => setMode("signup")}
                                 className={`flex-1 py-2.5 px-4 rounded-lg font-medium text-sm transition-all duration-200 ${mode === "signup"
-                                    ? "bg-white dark:bg-zinc-700 text-zinc-900 dark:text-white shadow-md"
-                                    : "text-zinc-600 dark:text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
+                                    ? "bg-background text-foreground shadow-sm"
+                                    : "text-muted-foreground hover:text-foreground"
                                     }`}
                             >
                                 Sign Up
@@ -119,7 +119,7 @@ export default function AuthForm() {
                         <Button
                             type="button"
                             variant="outline"
-                            className="w-full h-12 border-2 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-all duration-200 group"
+                            className="w-full h-12 border-2 hover:bg-muted transition-all duration-200 group"
                             onClick={handleGoogleAuth}
                             disabled={isLoading}
                         >
@@ -147,7 +147,7 @@ export default function AuthForm() {
                         {/* Divider */}
                         <div className="relative my-6">
                             <div className="absolute inset-0 flex items-center">
-                                <div className="w-full border-t border-zinc-200 dark:border-zinc-700"></div>
+                                <div className="w-full border-t border-border"></div>
                             </div>
                             <div className="relative flex justify-center text-sm">
                                 <span className="px-4 bg-white/80 dark:bg-zinc-100 dark:bg-zinc-900/80 text-zinc-500 dark:text-zinc-600 dark:text-zinc-400">
@@ -161,8 +161,8 @@ export default function AuthForm() {
                             <button
                                 onClick={() => setMethod("password")}
                                 className={`flex-1 py-2 px-3 rounded-lg text-sm font-medium transition-all duration-200 ${method === "password"
-                                    ? "bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white"
-                                    : "text-zinc-600 dark:text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-800/50"
+                                    ? "bg-muted text-foreground"
+                                    : "text-muted-foreground hover:bg-background/50"
                                     }`}
                             >
                                 <Lock className="w-4 h-4 inline mr-1.5" />
@@ -171,8 +171,8 @@ export default function AuthForm() {
                             <button
                                 onClick={() => setMethod("magiclink")}
                                 className={`flex-1 py-2 px-3 rounded-lg text-sm font-medium transition-all duration-200 ${method === "magiclink"
-                                    ? "bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white"
-                                    : "text-zinc-600 dark:text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-800/50"
+                                    ? "bg-muted text-foreground"
+                                    : "text-muted-foreground hover:bg-background/50"
                                     }`}
                             >
                                 <Sparkles className="w-4 h-4 inline mr-1.5" />
@@ -184,7 +184,7 @@ export default function AuthForm() {
                         <form onSubmit={handleSubmit} className="space-y-4">
                             {mode === "signup" && (
                                 <div className="space-y-2">
-                                    <Label htmlFor="name" className="text-zinc-700 dark:text-zinc-700 dark:text-zinc-300">
+                                    <Label htmlFor="name" className="text-foreground">
                                         Full Name
                                     </Label>
                                     <Input
@@ -194,17 +194,17 @@ export default function AuthForm() {
                                         value={name}
                                         onChange={(e) => setName(e.target.value)}
                                         required={mode === "signup"}
-                                        className="h-12 border-zinc-200 dark:border-zinc-700 focus:border-blue-500 dark:focus:border-blue-500"
+                                        className="h-12 border-input focus:border-primary"
                                     />
                                 </div>
                             )}
 
                             <div className="space-y-2">
-                                <Label htmlFor="email" className="text-zinc-700 dark:text-zinc-700 dark:text-zinc-300">
+                                <Label htmlFor="email" className="text-foreground">
                                     Email Address
                                 </Label>
                                 <div className="relative">
-                                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-600 dark:text-zinc-400" />
+                                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                                     <Input
                                         id="email"
                                         type="email"
@@ -212,7 +212,7 @@ export default function AuthForm() {
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
                                         required
-                                        className="h-12 pl-11 border-zinc-200 dark:border-zinc-700 focus:border-blue-500 dark:focus:border-blue-500"
+                                        className="h-12 pl-11 border-input focus:border-primary"
                                     />
                                 </div>
                             </div>
@@ -220,20 +220,20 @@ export default function AuthForm() {
                             {method === "password" && (
                                 <div className="space-y-2">
                                     <div className="flex items-center justify-between">
-                                        <Label htmlFor="password" className="text-zinc-700 dark:text-zinc-700 dark:text-zinc-300">
+                                        <Label htmlFor="password" className="text-foreground">
                                             Password
                                         </Label>
                                         {mode === "login" && (
                                             <button
                                                 type="button"
-                                                className="text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium transition-colors"
+                                                className="text-sm text-primary hover:text-primary/90 font-medium transition-colors"
                                             >
                                                 Forgot?
                                             </button>
                                         )}
                                     </div>
                                     <div className="relative">
-                                        <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-600 dark:text-zinc-400" />
+                                        <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                                         <Input
                                             id="password"
                                             type="password"
@@ -241,7 +241,7 @@ export default function AuthForm() {
                                             value={password}
                                             onChange={(e) => setPassword(e.target.value)}
                                             required={method === "password"}
-                                            className="h-12 pl-11 border-zinc-200 dark:border-zinc-700 focus:border-blue-500 dark:focus:border-blue-500"
+                                            className="h-12 pl-11 border-input focus:border-primary"
                                         />
                                     </div>
                                 </div>
@@ -250,7 +250,7 @@ export default function AuthForm() {
                             <Button
                                 type="submit"
                                 disabled={isLoading}
-                                className="w-full h-12 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-200 group"
+                                className="w-full h-12 bg-gradient-to-r from-primary to-violet-600 hover:from-primary/90 hover:to-violet-600/90 text-primary-foreground font-semibold shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-200 group"
                             >
                                 {isLoading ? (
                                     <div className="flex items-center gap-2">
@@ -272,14 +272,14 @@ export default function AuthForm() {
                     </div>
 
                     {/* Footer */}
-                    <div className="px-8 py-6 bg-zinc-50 dark:bg-zinc-800/50 border-t border-zinc-200 dark:border-zinc-700">
-                        <p className="text-center text-sm text-zinc-600 dark:text-zinc-600 dark:text-zinc-400">
+                    <div className="px-8 py-6 bg-muted/50 border-t border-border">
+                        <p className="text-center text-sm text-muted-foreground">
                             {mode === "login" ? (
                                 <>
                                     Don&apos;t have an account?{" "}
                                     <button
                                         onClick={() => setMode("signup")}
-                                        className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-semibold transition-colors"
+                                        className="text-primary hover:text-primary/90 font-semibold transition-colors"
                                     >
                                         Sign up
                                     </button>
@@ -289,7 +289,7 @@ export default function AuthForm() {
                                     Already have an account?{" "}
                                     <button
                                         onClick={() => setMode("login")}
-                                        className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-semibold transition-colors"
+                                        className="text-primary hover:text-primary/90 font-semibold transition-colors"
                                     >
                                         Sign in
                                     </button>
@@ -300,13 +300,13 @@ export default function AuthForm() {
                 </div>
 
                 {/* Terms */}
-                <p className="text-center text-xs text-zinc-500 dark:text-zinc-600 dark:text-zinc-400 mt-6">
+                <p className="text-center text-xs text-muted-foreground mt-6">
                     By continuing, you agree to our{" "}
-                    <a href="#" className="underline hover:text-zinc-700 dark:hover:text-zinc-700 dark:text-zinc-300">
+                    <a href="#" className="underline hover:text-foreground">
                         Terms of Service
                     </a>{" "}
                     and{" "}
-                    <a href="#" className="underline hover:text-zinc-700 dark:hover:text-zinc-700 dark:text-zinc-300">
+                    <a href="#" className="underline hover:text-foreground">
                         Privacy Policy
                     </a>
                 </p>
