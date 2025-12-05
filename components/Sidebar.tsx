@@ -23,7 +23,7 @@ export function Sidebar({ currentPage, onNavigate }: SidebarProps) {
           <div className="w-8 h-8 bg-gradient-to-br from-[#4F46E5] to-[#6366f1] rounded-lg flex items-center justify-center shrink-0">
             <Zap className="w-5 h-5 text-white" />
           </div>
-          <span className="text-xl font-semibold text-white">SignalForge</span>
+          <span className="text-xl font-semibold text-white">OmniBeam</span>
         </div>
       </div>
 

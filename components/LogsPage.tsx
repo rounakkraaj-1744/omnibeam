@@ -29,7 +29,7 @@ export function LogsPage() {
       attempts: 1,
       recipient: 'user@example.com',
       timestamp: '2025-12-05 14:32:15',
-      message: 'Welcome to SignalForge',
+      message: 'Welcome to OmniBeam',
       providerResponse: {
         messageId: 'msg_abc123',
         status: 'delivered',

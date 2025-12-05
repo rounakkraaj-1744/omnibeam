@@ -16,7 +16,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
             <div className="w-8 h-8 bg-gradient-to-br from-[#4F46E5] to-[#6366f1] rounded-lg flex items-center justify-center shrink-0">
               <Zap className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-semibold text-white">SignalForge</span>
+            <span className="text-xl font-semibold text-white">OmniBeam</span>
           </div>
           <nav className="flex items-center gap-8">
             <a href="#features" className="text-sm font-medium text-neutral-400 hover:text-neutral-200 transition-colors">Features</a>
@@ -42,7 +42,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
           </h1>
           
           <p className="text-lg md:text-xl text-neutral-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-            SignalForge is a multi-channel notification platform that routes your messages through Email, Slack, Push Notifications, and SMS with programmable retries and real-time delivery tracking.
+            OmniBeam is a multi-channel notification platform that routes your messages through Email, Slack, Push Notifications, and SMS with programmable retries and real-time delivery tracking.
           </p>
 
           <div className="flex items-center justify-center gap-4 flex-wrap">
@@ -154,7 +154,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
         <div className="bg-gradient-to-br from-[#4F46E5]/10 to-[#10B981]/10 border border-[#4F46E5]/20 rounded-2xl p-12 text-center">
           <h2 className="mb-4 text-neutral-100">Ready to get started?</h2>
           <p className="text-lg text-neutral-400 mb-8 max-w-2xl mx-auto">
-            Join thousands of developers using SignalForge to power their notification infrastructure.
+            Join thousands of developers using OmniBeam to power their notification infrastructure.
           </p>
           <Button size="lg" onClick={onGetStarted}>
             Start Building Today
@@ -170,7 +170,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
               <div className="w-6 h-6 bg-gradient-to-br from-[#4F46E5] to-[#6366f1] rounded-md flex items-center justify-center">
                 <Zap className="w-4 h-4 text-white" />
               </div>
-              <span className="text-neutral-400">SignalForge</span>
+              <span className="text-neutral-400">OmniBeam</span>
             </div>
             <div className="flex items-center gap-6">
               <a href="#" className="text-sm text-neutral-500 hover:text-neutral-300 transition-colors">Docs</a>
@@ -180,7 +180,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-neutral-900 text-center">
-            <p className="text-sm text-neutral-600">© 2025 SignalForge. All rights reserved.</p>
+            <p className="text-sm text-neutral-600">© 2025 OmniBeam. All rights reserved.</p>
           </div>
         </div>
       </footer>

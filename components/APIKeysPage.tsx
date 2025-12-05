@@ -99,7 +99,7 @@ export function APIKeysPage() {
         <div className="flex items-center justify-between">
           <div>
             <h1 className="mb-2 text-neutral-100">API Keys</h1>
-            <p className="text-neutral-400">Manage your SignalForge API keys</p>
+            <p className="text-neutral-400">Manage your OmniBeam API keys</p>
           </div>
           <Button onClick={() => setShowCreateModal(true)}>
             <Plus className="w-4 h-4" />
