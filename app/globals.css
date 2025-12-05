@@ -79,43 +79,58 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --background: rgb(9 9 11);
+  /* #09090B - warmer dark background */
+  --foreground: rgb(250 250 250);
+  /* #FAFAFA - high contrast white */
+  --card: rgb(24 24 27);
+  /* #18181B - elevated surface */
+  --card-foreground: rgb(250 250 250);
+  --popover: rgb(24 24 27);
+  --popover-foreground: rgb(250 250 250);
+  --primary: rgb(99 102 241);
+  /* #6366F1 - vibrant purple-blue */
+  --primary-foreground: rgb(250 250 250);
+  --secondary: rgb(39 39 42);
+  /* #27272A - subtle secondary */
+  --secondary-foreground: rgb(250 250 250);
+  --muted: rgb(39 39 42);
+  --muted-foreground: rgb(161 161 170);
+  /* #A1A1AA - muted text */
+  --accent: rgb(39 39 42);
+  --accent-foreground: rgb(250 250 250);
+  --destructive: rgb(239 68 68);
+  /* #EF4444 - vibrant red */
+  --border: rgb(39 39 42);
+  /* #27272A - subtle borders */
+  --input: rgb(39 39 42);
+  --ring: rgb(99 102 241);
+  /* #6366F1 - primary focus ring */
+  --chart-1: rgb(139 92 246);
+  /* #8B5CF6 - purple */
+  --chart-2: rgb(59 130 246);
+  /* #3B82F6 - blue */
+  --chart-3: rgb(16 185 129);
+  /* #10B981 - emerald */
+  --chart-4: rgb(245 158 11);
+  /* #F59E0B - amber */
+  --chart-5: rgb(236 72 153);
+  /* #EC4899 - pink */
+  --sidebar: rgb(24 24 27);
+  --sidebar-foreground: rgb(250 250 250);
+  --sidebar-primary: rgb(99 102 241);
+  --sidebar-primary-foreground: rgb(250 250 250);
+  --sidebar-accent: rgb(39 39 42);
+  --sidebar-accent-foreground: rgb(250 250 250);
+  --sidebar-border: rgb(39 39 42);
+  --sidebar-ring: rgb(99 102 241);
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }

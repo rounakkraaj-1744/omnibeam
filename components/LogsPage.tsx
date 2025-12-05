@@ -108,7 +108,7 @@ export function LogsPage() {
       case 'slack': return { Icon: MessageSquare, color: 'text-purple-400', bg: 'bg-purple-500/10' };
       case 'push': return { Icon: Bell, color: 'text-amber-400', bg: 'bg-amber-500/10' };
       case 'sms': return { Icon: Smartphone, color: 'text-emerald-400', bg: 'bg-emerald-500/10' };
-      default: return { Icon: Mail, color: 'text-neutral-400', bg: 'bg-neutral-500/10' };
+      default: return { Icon: Mail, color: 'text-zinc-400', bg: 'bg-zinc-500/10' };
     }
   };
 
@@ -131,16 +131,16 @@ export function LogsPage() {
   return (
     <div className="p-8">
       <div className="mb-8">
-        <h1 className="mb-2 text-neutral-100">Delivery Logs</h1>
-        <p className="text-neutral-400">Real-time notification tracking and monitoring</p>
+        <h1 className="mb-2 text-zinc-100">Delivery Logs</h1>
+        <p className="text-zinc-400">Real-time notification tracking and monitoring</p>
       </div>
 
       {/* Filters */}
       <Card className="mb-6">
         <div className="flex items-center gap-4 flex-wrap p-4">
           <div className="flex items-center gap-2">
-            <Filter className="w-5 h-5 text-neutral-500" />
-            <span className="text-sm text-neutral-400">Filters:</span>
+            <Filter className="w-5 h-5 text-zinc-500" />
+            <span className="text-sm text-zinc-400">Filters:</span>
           </div>
 
           <Select value={channelFilter} onValueChange={setChannelFilter}>
@@ -169,7 +169,7 @@ export function LogsPage() {
             </SelectContent>
           </Select>
 
-          <div className="ml-auto text-sm text-neutral-500">
+          <div className="ml-auto text-sm text-zinc-500">
             Showing {filteredLogs.length} of {logs.length} logs
           </div>
         </div>
@@ -198,9 +198,9 @@ export function LogsPage() {
                 <TableRow onClick={() => setExpandedRow(isExpanded ? null : log.id)}>
                   <TableCell className="w-8">
                     {isExpanded ? (
-                      <ChevronDown className="w-4 h-4 text-neutral-500" />
+                      <ChevronDown className="w-4 h-4 text-zinc-500" />
                     ) : (
-                      <ChevronRight className="w-4 h-4 text-neutral-500" />
+                      <ChevronRight className="w-4 h-4 text-zinc-500" />
                     )}
                   </TableCell>
                   <TableCell>
@@ -219,15 +219,15 @@ export function LogsPage() {
                   <TableCell>{log.attempts}</TableCell>
                   <TableCell className="max-w-[200px] truncate">{log.recipient}</TableCell>
                   <TableCell className="max-w-[250px] truncate">{log.message}</TableCell>
-                  <TableCell className="text-neutral-500">{log.timestamp}</TableCell>
+                  <TableCell className="text-zinc-500">{log.timestamp}</TableCell>
                 </TableRow>
 
                 {isExpanded && (
                   <TableRow>
-                    <TableCell colSpan={7} className="bg-[#0a0a0a] border-t-0">
+                    <TableCell colSpan={7} className="bg-zinc-950 border-t-0">
                       <div className="py-4">
-                        <h4 className="mb-3 text-neutral-100">Provider Response</h4>
-                        <pre className="p-4 bg-neutral-900 border border-neutral-800 rounded-lg text-xs text-neutral-300 overflow-x-auto">
+                        <h4 className="mb-3 text-zinc-100">Provider Response</h4>
+                        <pre className="p-4 bg-zinc-900 border border-zinc-800 rounded-lg text-xs text-zinc-300 overflow-x-auto">
                           {JSON.stringify(log.providerResponse, null, 2)}
                         </pre>
                       </div>

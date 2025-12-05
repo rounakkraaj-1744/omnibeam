@@ -44,8 +44,8 @@ export function SendNotificationPage() {
   return (
     <div className="p-8">
       <div className="mb-8">
-        <h1 className="mb-2 text-neutral-100">Send Notification</h1>
-        <p className="text-neutral-400">Dispatch notifications across multiple channels</p>
+        <h1 className="mb-2 text-zinc-100">Send Notification</h1>
+        <p className="text-zinc-400">Dispatch notifications across multiple channels</p>
       </div>
 
       <div className="max-w-3xl">
@@ -68,12 +68,12 @@ export function SendNotificationPage() {
                       onClick={() => toggleChannel(channel.id)}
                       className={`relative p-4 rounded-lg border-2 transition-all ${isSelected
                           ? `${channel.bgColor} ${channel.borderColor}`
-                          : 'bg-neutral-900 border-neutral-800 hover:border-neutral-700'
+                          : 'bg-zinc-900 border-zinc-800 hover:border-neutral-700'
                         }`}
                     >
                       <div className="flex flex-col items-center gap-2">
-                        <Icon className={`w-6 h-6 ${isSelected ? channel.color : 'text-neutral-500'}`} />
-                        <span className={`text-sm ${isSelected ? 'text-neutral-200' : 'text-neutral-400'}`}>
+                        <Icon className={`w-6 h-6 ${isSelected ? channel.color : 'text-zinc-500'}`} />
+                        <span className={`text-sm ${isSelected ? 'text-zinc-200' : 'text-zinc-400'}`}>
                           {channel.label}
                         </span>
                       </div>
@@ -87,7 +87,7 @@ export function SendNotificationPage() {
                 })}
               </div>
               <div className="mt-4 flex items-center gap-2">
-                <span className="text-sm text-neutral-400">Selected:</span>
+                <span className="text-sm text-zinc-400">Selected:</span>
                 {selectedChannels.length === 0 ? (
                   <Badge variant="default">None</Badge>
                 ) : (
@@ -112,7 +112,7 @@ export function SendNotificationPage() {
             <CardContent>
               <div className="space-y-4">
                 <div>
-                  <label className="text-sm text-neutral-400 mb-2 block">
+                  <label className="text-sm text-zinc-400 mb-2 block">
                     Message Body
                   </label>
                   <textarea
@@ -121,7 +121,7 @@ export function SendNotificationPage() {
                     placeholder="Enter your notification message..."
                     rows={6}
                     required
-                    className="w-full px-4 py-3 bg-[#111111] border border-neutral-800 rounded-lg text-white placeholder:text-neutral-600 focus:outline-none focus:ring-2 focus:ring-[#4F46E5] focus:border-transparent transition-all resize-none"
+                    className="w-full px-4 py-3 bg-zinc-900 border border-zinc-800 rounded-lg text-white placeholder:text-neutral-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all resize-none"
                   />
                 </div>
               </div>
@@ -158,7 +158,7 @@ export function SendNotificationPage() {
 
                 {selectedChannels.includes('push') && (
                   <div className="p-4 bg-amber-500/5 border border-amber-500/10 rounded-lg">
-                    <p className="text-sm text-neutral-300">
+                    <p className="text-sm text-zinc-300">
                       Push notifications will be sent to all registered devices for this user.
                     </p>
                   </div>
@@ -200,8 +200,8 @@ export function SendNotificationPage() {
           <div className="w-16 h-16 bg-emerald-500/10 border border-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
             <CheckCircle className="w-8 h-8 text-emerald-400" />
           </div>
-          <h3 className="mb-2 text-neutral-100">Success!</h3>
-          <p className="text-neutral-400">
+          <h3 className="mb-2 text-zinc-100">Success!</h3>
+          <p className="text-zinc-400">
             Your notification has been queued and will be delivered shortly.
           </p>
         </div>

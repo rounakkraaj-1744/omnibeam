@@ -91,8 +91,8 @@ export function DashboardHome() {
   return (
     <div className="p-6 md:p-8">
       <div className="mb-8">
-        <h1 className="text-3xl font-semibold mb-2 text-neutral-100">Dashboard</h1>
-        <p className="text-base text-neutral-400">Overview of your notification activity</p>
+        <h1 className="text-3xl font-semibold mb-2 text-zinc-100">Dashboard</h1>
+        <p className="text-base text-zinc-400">Overview of your notification activity</p>
       </div>
 
       {/* Stats Grid */}
@@ -104,11 +104,11 @@ export function DashboardHome() {
               <CardContent className="p-5">
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
-                    <p className="text-sm font-medium text-neutral-400 mb-3">{stat.title}</p>
-                    <h2 className="text-2xl font-semibold mb-2 text-neutral-100">{stat.value}</h2>
+                    <p className="text-sm font-medium text-zinc-400 mb-3">{stat.title}</p>
+                    <h2 className="text-2xl font-semibold mb-2 text-zinc-100">{stat.value}</h2>
                     <p className="text-xs font-medium text-emerald-400">{stat.change}</p>
                   </div>
-                  <div className={`w-12 h-12 bg-neutral-900 rounded-lg flex items-center justify-center ${stat.color} shrink-0`}>
+                  <div className={`w-12 h-12 bg-zinc-900 rounded-lg flex items-center justify-center ${stat.color} shrink-0`}>
                     <Icon className="w-6 h-6" />
                   </div>
                 </div>
@@ -128,13 +128,13 @@ export function DashboardHome() {
             {recentActivity.map((activity) => {
               const Icon = activity.icon;
               return (
-                <div key={activity.id} className="flex items-start gap-4 pb-4 border-b border-neutral-900 last:border-0 last:pb-0">
+                <div key={activity.id} className="flex items-start gap-4 pb-4 border-b border-zinc-900 last:border-0 last:pb-0">
                   <div className={`w-10 h-10 ${activity.iconBg} rounded-lg flex items-center justify-center shrink-0`}>
                     <Icon className={`w-5 h-5 ${activity.iconColor}`} />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-start justify-between gap-4 mb-1">
-                      <p className="text-sm font-medium text-neutral-300">{activity.message}</p>
+                      <p className="text-sm font-medium text-zinc-300">{activity.message}</p>
                       <Badge 
                         variant={
                           activity.status === 'success' ? 'success' : 
@@ -145,7 +145,7 @@ export function DashboardHome() {
                         {activity.status}
                       </Badge>
                     </div>
-                    <p className="text-xs text-neutral-500">{activity.time}</p>
+                    <p className="text-xs text-zinc-500">{activity.time}</p>
                   </div>
                 </div>
               );

@@ -26,7 +26,7 @@ const badgeVariants = cva(
         info:
           "border-transparent bg-blue-500/10 text-blue-400 border-blue-500/20 [a&]:hover:bg-blue-500/20",
         pending:
-          "border-transparent bg-neutral-500/10 text-neutral-400 border-neutral-500/20 [a&]:hover:bg-neutral-500/20",
+          "border-transparent bg-zinc-500/10 text-zinc-400 border-zinc-500/20 [a&]:hover:bg-zinc-500/20",
       },
     },
     defaultVariants: {

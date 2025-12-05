@@ -24,8 +24,8 @@ export function ChannelsPage() {
   return (
     <div className="p-8">
       <div className="mb-8">
-        <h1 className="mb-2 text-neutral-100">Channels Configuration</h1>
-        <p className="text-neutral-400">Configure your notification delivery channels</p>
+        <h1 className="mb-2 text-zinc-100">Channels Configuration</h1>
+        <p className="text-zinc-400">Configure your notification delivery channels</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -39,7 +39,7 @@ export function ChannelsPage() {
                 </div>
                 <div>
                   <CardTitle>Email</CardTitle>
-                  <p className="text-xs text-neutral-500 mt-1">Powered by Resend</p>
+                  <p className="text-xs text-zinc-500 mt-1">Powered by Resend</p>
                 </div>
               </div>
               <Switch 
@@ -57,10 +57,10 @@ export function ChannelsPage() {
                 value={resendKey}
                 onChange={(e) => setResendKey(e.target.value)}
               />
-              <div className="flex items-center justify-between p-3 bg-neutral-900 rounded-lg">
+              <div className="flex items-center justify-between p-3 bg-zinc-900 rounded-lg">
                 <div>
-                  <p className="text-sm text-neutral-300">Status</p>
-                  <p className="text-xs text-neutral-500">Connected and active</p>
+                  <p className="text-sm text-zinc-300">Status</p>
+                  <p className="text-xs text-zinc-500">Connected and active</p>
                 </div>
                 <Badge variant="success">Active</Badge>
               </div>
@@ -82,7 +82,7 @@ export function ChannelsPage() {
                 </div>
                 <div>
                   <CardTitle>Slack</CardTitle>
-                  <p className="text-xs text-neutral-500 mt-1">Workspace integration</p>
+                  <p className="text-xs text-zinc-500 mt-1">Workspace integration</p>
                 </div>
               </div>
               <Badge variant={slackConnected ? 'success' : 'default'}>
@@ -100,11 +100,11 @@ export function ChannelsPage() {
                         A
                       </div>
                       <div>
-                        <p className="text-sm text-neutral-200">Acme Corp Workspace</p>
-                        <p className="text-xs text-neutral-500">acme-corp.slack.com</p>
+                        <p className="text-sm text-zinc-200">Acme Corp Workspace</p>
+                        <p className="text-xs text-zinc-500">acme-corp.slack.com</p>
                       </div>
                     </div>
-                    <div className="flex items-center gap-2 text-xs text-neutral-400">
+                    <div className="flex items-center gap-2 text-xs text-zinc-400">
                       <span>•</span>
                       <span>Access to 12 channels</span>
                       <span>•</span>
@@ -135,7 +135,7 @@ export function ChannelsPage() {
                 </div>
                 <div>
                   <CardTitle>Push Notifications</CardTitle>
-                  <p className="text-xs text-neutral-500 mt-1">Web Push via VAPID</p>
+                  <p className="text-xs text-zinc-500 mt-1">Web Push via VAPID</p>
                 </div>
               </div>
               <Switch 
@@ -147,7 +147,7 @@ export function ChannelsPage() {
           <CardContent>
             <div className="space-y-4">
               <div>
-                <label className="text-sm text-neutral-400 mb-2 block">
+                <label className="text-sm text-zinc-400 mb-2 block">
                   VAPID Public Key
                 </label>
                 <div className="flex gap-2">
@@ -155,7 +155,7 @@ export function ChannelsPage() {
                     type="text"
                     value={vapidKey}
                     readOnly
-                    className="flex-1 px-4 py-2.5 bg-neutral-900 border border-neutral-800 rounded-lg text-neutral-300 text-sm"
+                    className="flex-1 px-4 py-2.5 bg-zinc-900 border border-zinc-800 rounded-lg text-zinc-300 text-sm"
                   />
                   <Button 
                     variant="ghost" 
@@ -190,7 +190,7 @@ export function ChannelsPage() {
                 </div>
                 <div>
                   <CardTitle>SMS</CardTitle>
-                  <p className="text-xs text-neutral-500 mt-1">Powered by Twilio</p>
+                  <p className="text-xs text-zinc-500 mt-1">Powered by Twilio</p>
                 </div>
               </div>
               <Switch 

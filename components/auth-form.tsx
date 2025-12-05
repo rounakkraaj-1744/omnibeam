@@ -33,20 +33,20 @@ export function AuthForm() {
     }
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950 p-4">
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-zinc-50 via-blue-50 to-indigo-100 dark:from-zinc-950 dark:via-zinc-900 dark:to-indigo-950 p-4">
             <div className="w-full max-w-md">
                 {/* Card Container */}
-                <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl shadow-2xl border border-slate-200/50 dark:border-slate-700/50 overflow-hidden">
+                <div className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl rounded-2xl shadow-2xl border border-zinc-200/50 dark:border-zinc-700/50 overflow-hidden">
                     {/* Header with Toggle */}
                     <div className="p-8 pb-6">
                         <div className="text-center mb-8">
                             <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 mb-4 shadow-lg shadow-blue-500/30">
                                 <Sparkles className="w-8 h-8 text-white" />
                             </div>
-                            <h1 className="text-3xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
+                            <h1 className="text-3xl font-bold bg-gradient-to-r from-zinc-900 to-zinc-700 dark:from-white dark:to-zinc-300 bg-clip-text text-transparent">
                                 Welcome Back
                             </h1>
-                            <p className="text-slate-600 dark:text-slate-400 mt-2">
+                            <p className="text-zinc-600 dark:text-zinc-400 mt-2">
                                 {mode === "login"
                                     ? "Sign in to continue your journey"
                                     : "Create an account to get started"}
@@ -54,12 +54,12 @@ export function AuthForm() {
                         </div>
 
                         {/* Mode Toggle */}
-                        <div className="flex gap-2 p-1 bg-slate-100 dark:bg-slate-800 rounded-xl mb-6">
+                        <div className="flex gap-2 p-1 bg-zinc-100 dark:bg-zinc-800 rounded-xl mb-6">
                             <button
                                 onClick={() => setMode("login")}
                                 className={`flex-1 py-2.5 px-4 rounded-lg font-medium text-sm transition-all duration-200 ${mode === "login"
-                                        ? "bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-md"
-                                        : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                                        ? "bg-white dark:bg-zinc-700 text-zinc-900 dark:text-white shadow-md"
+                                        : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
                                     }`}
                             >
                                 Sign In
@@ -67,8 +67,8 @@ export function AuthForm() {
                             <button
                                 onClick={() => setMode("signup")}
                                 className={`flex-1 py-2.5 px-4 rounded-lg font-medium text-sm transition-all duration-200 ${mode === "signup"
-                                        ? "bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-md"
-                                        : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                                        ? "bg-white dark:bg-zinc-700 text-zinc-900 dark:text-white shadow-md"
+                                        : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
                                     }`}
                             >
                                 Sign Up
@@ -79,7 +79,7 @@ export function AuthForm() {
                         <Button
                             type="button"
                             variant="outline"
-                            className="w-full h-12 border-2 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all duration-200 group"
+                            className="w-full h-12 border-2 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-all duration-200 group"
                             onClick={handleGoogleAuth}
                         >
                             <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24">
@@ -106,10 +106,10 @@ export function AuthForm() {
                         {/* Divider */}
                         <div className="relative my-6">
                             <div className="absolute inset-0 flex items-center">
-                                <div className="w-full border-t border-slate-200 dark:border-slate-700"></div>
+                                <div className="w-full border-t border-zinc-200 dark:border-zinc-700"></div>
                             </div>
                             <div className="relative flex justify-center text-sm">
-                                <span className="px-4 bg-white/80 dark:bg-slate-900/80 text-slate-500 dark:text-slate-400">
+                                <span className="px-4 bg-white/80 dark:bg-zinc-900/80 text-zinc-500 dark:text-zinc-400">
                                     Or continue with
                                 </span>
                             </div>
@@ -120,8 +120,8 @@ export function AuthForm() {
                             <button
                                 onClick={() => setMethod("password")}
                                 className={`flex-1 py-2 px-3 rounded-lg text-sm font-medium transition-all duration-200 ${method === "password"
-                                        ? "bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white"
-                                        : "text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50"
+                                        ? "bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white"
+                                        : "text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-800/50"
                                     }`}
                             >
                                 <Lock className="w-4 h-4 inline mr-1.5" />
@@ -130,8 +130,8 @@ export function AuthForm() {
                             <button
                                 onClick={() => setMethod("magiclink")}
                                 className={`flex-1 py-2 px-3 rounded-lg text-sm font-medium transition-all duration-200 ${method === "magiclink"
-                                        ? "bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white"
-                                        : "text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50"
+                                        ? "bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white"
+                                        : "text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-800/50"
                                     }`}
                             >
                                 <Sparkles className="w-4 h-4 inline mr-1.5" />
@@ -143,7 +143,7 @@ export function AuthForm() {
                         <form onSubmit={handleSubmit} className="space-y-4">
                             {mode === "signup" && (
                                 <div className="space-y-2">
-                                    <Label htmlFor="name" className="text-slate-700 dark:text-slate-300">
+                                    <Label htmlFor="name" className="text-zinc-700 dark:text-zinc-300">
                                         Full Name
                                     </Label>
                                     <Input
@@ -153,17 +153,17 @@ export function AuthForm() {
                                         value={name}
                                         onChange={(e) => setName(e.target.value)}
                                         required={mode === "signup"}
-                                        className="h-12 border-slate-200 dark:border-slate-700 focus:border-blue-500 dark:focus:border-blue-500"
+                                        className="h-12 border-zinc-200 dark:border-zinc-700 focus:border-blue-500 dark:focus:border-blue-500"
                                     />
                                 </div>
                             )}
 
                             <div className="space-y-2">
-                                <Label htmlFor="email" className="text-slate-700 dark:text-slate-300">
+                                <Label htmlFor="email" className="text-zinc-700 dark:text-zinc-300">
                                     Email Address
                                 </Label>
                                 <div className="relative">
-                                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+                                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-400" />
                                     <Input
                                         id="email"
                                         type="email"
@@ -171,7 +171,7 @@ export function AuthForm() {
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
                                         required
-                                        className="h-12 pl-11 border-slate-200 dark:border-slate-700 focus:border-blue-500 dark:focus:border-blue-500"
+                                        className="h-12 pl-11 border-zinc-200 dark:border-zinc-700 focus:border-blue-500 dark:focus:border-blue-500"
                                     />
                                 </div>
                             </div>
@@ -179,7 +179,7 @@ export function AuthForm() {
                             {method === "password" && (
                                 <div className="space-y-2">
                                     <div className="flex items-center justify-between">
-                                        <Label htmlFor="password" className="text-slate-700 dark:text-slate-300">
+                                        <Label htmlFor="password" className="text-zinc-700 dark:text-zinc-300">
                                             Password
                                         </Label>
                                         {mode === "login" && (
@@ -192,7 +192,7 @@ export function AuthForm() {
                                         )}
                                     </div>
                                     <div className="relative">
-                                        <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+                                        <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-400" />
                                         <Input
                                             id="password"
                                             type="password"
@@ -200,7 +200,7 @@ export function AuthForm() {
                                             value={password}
                                             onChange={(e) => setPassword(e.target.value)}
                                             required={method === "password"}
-                                            className="h-12 pl-11 border-slate-200 dark:border-slate-700 focus:border-blue-500 dark:focus:border-blue-500"
+                                            className="h-12 pl-11 border-zinc-200 dark:border-zinc-700 focus:border-blue-500 dark:focus:border-blue-500"
                                         />
                                     </div>
                                 </div>
@@ -231,8 +231,8 @@ export function AuthForm() {
                     </div>
 
                     {/* Footer */}
-                    <div className="px-8 py-6 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-200 dark:border-slate-700">
-                        <p className="text-center text-sm text-slate-600 dark:text-slate-400">
+                    <div className="px-8 py-6 bg-zinc-50 dark:bg-zinc-800/50 border-t border-zinc-200 dark:border-zinc-700">
+                        <p className="text-center text-sm text-zinc-600 dark:text-zinc-400">
                             {mode === "login" ? (
                                 <>
                                     Don&apos;t have an account?{" "}
@@ -259,13 +259,13 @@ export function AuthForm() {
                 </div>
 
                 {/* Terms */}
-                <p className="text-center text-xs text-slate-500 dark:text-slate-400 mt-6">
+                <p className="text-center text-xs text-zinc-500 dark:text-zinc-400 mt-6">
                     By continuing, you agree to our{" "}
-                    <a href="#" className="underline hover:text-slate-700 dark:hover:text-slate-300">
+                    <a href="#" className="underline hover:text-zinc-700 dark:hover:text-zinc-300">
                         Terms of Service
                     </a>{" "}
                     and{" "}
-                    <a href="#" className="underline hover:text-slate-700 dark:hover:text-slate-300">
+                    <a href="#" className="underline hover:text-zinc-700 dark:hover:text-zinc-300">
                         Privacy Policy
                     </a>
                 </p>
