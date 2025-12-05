@@ -12,7 +12,7 @@ type AuthMethod = "password" | "magiclink"
 import { useRouter } from "next/navigation"
 import { authClient } from "@/lib/auth-client"
 
-export function AuthForm() {
+export default function AuthForm() {
     const router = useRouter()
     const [mode, setMode] = useState<AuthMode>("login")
     const [method, setMethod] = useState<AuthMethod>("password")
@@ -58,10 +58,18 @@ export function AuthForm() {
     }
 
     const handleGoogleAuth = async () => {
-        await authClient.signIn.social({
-            provider: "google",
-            callbackURL: "/dashboard",
-        })
+        try {
+            setIsLoading(true)
+            const res = await authClient.signIn.social({
+                provider: "google",
+                callbackURL: "/dashboard",
+            })
+            console.log("Google Auth Result:", res)
+        } catch (error) {
+            console.error("Google Auth Error:", error)
+        } finally {
+            setIsLoading(false)
+        }
     }
 
     return (
@@ -113,6 +121,7 @@ export function AuthForm() {
                             variant="outline"
                             className="w-full h-12 border-2 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-all duration-200 group"
                             onClick={handleGoogleAuth}
+                            disabled={isLoading}
                         >
                             <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24">
                                 <path
