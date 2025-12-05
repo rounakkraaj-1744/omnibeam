@@ -98,8 +98,8 @@ export function APIKeysPage() {
       <div className="mb-8">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="mb-2 text-zinc-100">API Keys</h1>
-            <p className="text-zinc-400">Manage your OmniBeam API keys</p>
+            <h1 className="mb-2 text-zinc-900 dark:text-zinc-100">API Keys</h1>
+            <p className="text-zinc-600 dark:text-zinc-400">Manage your OmniBeam API keys</p>
           </div>
           <Button onClick={() => setShowCreateModal(true)}>
             <Plus className="w-4 h-4" />
@@ -117,12 +117,12 @@ export function APIKeysPage() {
                 <CheckCircle className="w-5 h-5 text-emerald-400" />
               </div>
               <div className="flex-1">
-                <h4 className="mb-1 text-zinc-100">API Key Created Successfully</h4>
-                <p className="text-sm text-zinc-400 mb-3">
+                <h4 className="mb-1 text-zinc-900 dark:text-zinc-100">API Key Created Successfully</h4>
+                <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-3">
                   Make sure to copy your API key now. You won&apos;t be able to see it again!
                 </p>
                 <div className="flex items-center gap-2">
-                  <code className="flex-1 px-4 py-2 bg-zinc-900 border border-zinc-800 rounded-lg text-sm text-emerald-400">
+                  <code className="flex-1 px-4 py-2 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg text-sm text-emerald-400">
                     {newlyCreatedKey}
                   </code>
                   <Button
@@ -137,7 +137,7 @@ export function APIKeysPage() {
               </div>
               <button
                 onClick={() => setNewlyCreatedKey(null)}
-                className="text-zinc-500 hover:text-zinc-300 transition-colors"
+                className="text-zinc-500 hover:text-zinc-700 dark:text-zinc-300 transition-colors"
               >
                 ×
               </button>
@@ -162,25 +162,25 @@ export function APIKeysPage() {
 
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-3 mb-2">
-                        <h4 className="text-zinc-100">{apiKey.name}</h4>
+                        <h4 className="text-zinc-900 dark:text-zinc-100">{apiKey.name}</h4>
                         <Badge variant={apiKey.status === 'active' ? 'success' : 'default'}>
                           {apiKey.status}
                         </Badge>
                       </div>
 
                       <div className="flex items-center gap-2 mb-3">
-                        <code className="px-3 py-1.5 bg-zinc-900 border border-zinc-800 rounded text-sm text-zinc-300 font-mono">
+                        <code className="px-3 py-1.5 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded text-sm text-zinc-700 dark:text-zinc-300 font-mono">
                           {isVisible ? apiKey.key : maskKey(apiKey.key)}
                         </code>
                         <button
                           onClick={() => toggleKeyVisibility(apiKey.id)}
-                          className="p-1.5 text-zinc-500 hover:text-zinc-300 transition-colors"
+                          className="p-1.5 text-zinc-500 hover:text-zinc-700 dark:text-zinc-300 transition-colors"
                         >
                           {isVisible ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                         </button>
                         <button
                           onClick={() => copyToClipboard(apiKey.key)}
-                          className="p-1.5 text-zinc-500 hover:text-zinc-300 transition-colors"
+                          className="p-1.5 text-zinc-500 hover:text-zinc-700 dark:text-zinc-300 transition-colors"
                         >
                           <Copy className="w-4 h-4" />
                         </button>
@@ -219,8 +219,8 @@ export function APIKeysPage() {
         <CardContent>
           <div className="flex items-center justify-between">
             <div>
-              <h4 className="mb-1 text-zinc-100">Revoke All API Keys</h4>
-              <p className="text-sm text-zinc-400">
+              <h4 className="mb-1 text-zinc-900 dark:text-zinc-100">Revoke All API Keys</h4>
+              <p className="text-sm text-zinc-600 dark:text-zinc-400">
                 This will immediately revoke all active API keys. This action cannot be undone.
               </p>
             </div>
@@ -256,7 +256,7 @@ export function APIKeysPage() {
           value={newKeyName}
           onChange={(e) => setNewKeyName(e.target.value)}
         />
-        <p className="mt-3 text-sm text-zinc-400">
+        <p className="mt-3 text-sm text-zinc-600 dark:text-zinc-400">
           Choose a descriptive name to help you identify this key later.
         </p>
       </Modal>
@@ -280,7 +280,7 @@ export function APIKeysPage() {
           </>
         }
       >
-        <p className="text-zinc-300">
+        <p className="text-zinc-700 dark:text-zinc-300">
           Are you sure you want to delete this API key? This action cannot be undone and may break integrations using this key.
         </p>
       </Modal>

@@ -108,7 +108,7 @@ export function LogsPage() {
       case 'slack': return { Icon: MessageSquare, color: 'text-purple-400', bg: 'bg-purple-500/10' };
       case 'push': return { Icon: Bell, color: 'text-amber-400', bg: 'bg-amber-500/10' };
       case 'sms': return { Icon: Smartphone, color: 'text-emerald-400', bg: 'bg-emerald-500/10' };
-      default: return { Icon: Mail, color: 'text-zinc-400', bg: 'bg-zinc-500/10' };
+      default: return { Icon: Mail, color: 'text-zinc-600 dark:text-zinc-400', bg: 'bg-zinc-500/10' };
     }
   };
 
@@ -131,8 +131,8 @@ export function LogsPage() {
   return (
     <div className="p-8">
       <div className="mb-8">
-        <h1 className="mb-2 text-zinc-100">Delivery Logs</h1>
-        <p className="text-zinc-400">Real-time notification tracking and monitoring</p>
+        <h1 className="mb-2 text-zinc-900 dark:text-zinc-100">Delivery Logs</h1>
+        <p className="text-zinc-600 dark:text-zinc-400">Real-time notification tracking and monitoring</p>
       </div>
 
       {/* Filters */}
@@ -140,7 +140,7 @@ export function LogsPage() {
         <div className="flex items-center gap-4 flex-wrap p-4">
           <div className="flex items-center gap-2">
             <Filter className="w-5 h-5 text-zinc-500" />
-            <span className="text-sm text-zinc-400">Filters:</span>
+            <span className="text-sm text-zinc-600 dark:text-zinc-400">Filters:</span>
           </div>
 
           <Select value={channelFilter} onValueChange={setChannelFilter}>
@@ -224,10 +224,10 @@ export function LogsPage() {
 
                 {isExpanded && (
                   <TableRow>
-                    <TableCell colSpan={7} className="bg-zinc-950 border-t-0">
+                    <TableCell colSpan={7} className="bg-white dark:bg-zinc-950 border-t-0">
                       <div className="py-4">
-                        <h4 className="mb-3 text-zinc-100">Provider Response</h4>
-                        <pre className="p-4 bg-zinc-900 border border-zinc-800 rounded-lg text-xs text-zinc-300 overflow-x-auto">
+                        <h4 className="mb-3 text-zinc-900 dark:text-zinc-100">Provider Response</h4>
+                        <pre className="p-4 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg text-xs text-zinc-700 dark:text-zinc-300 overflow-x-auto">
                           {JSON.stringify(log.providerResponse, null, 2)}
                         </pre>
                       </div>

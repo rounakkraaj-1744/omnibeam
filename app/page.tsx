@@ -16,15 +16,6 @@ type DashboardPage = 'dashboard' | 'channels' | 'send' | 'logs' | 'api-keys' | '
 export default function App() {
   const [currentView, setCurrentView] = useState<AppView>('landing');
   const [currentPage, setCurrentPage] = useState<DashboardPage>('dashboard');
-  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
-
-  useEffect(() => {
-    if (theme === 'light') {
-      document.body.classList.add('light');
-    } else {
-      document.body.classList.remove('light');
-    }
-  }, [theme]);
 
   const handleGetStarted = () => {
     setCurrentView('login');
@@ -39,10 +30,6 @@ export default function App() {
     setCurrentPage(page as DashboardPage);
   };
 
-  const handleThemeToggle = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
-
   if (currentView === 'landing') {
     return <LandingPage onGetStarted={handleGetStarted} />;
   }
@@ -55,8 +42,6 @@ export default function App() {
     <DashboardLayout
       currentPage={currentPage}
       onNavigate={handleNavigate}
-      theme={theme}
-      onThemeToggle={handleThemeToggle}
     >
       {currentPage === 'dashboard' && <DashboardHome />}
       {currentPage === 'channels' && <ChannelsPage />}

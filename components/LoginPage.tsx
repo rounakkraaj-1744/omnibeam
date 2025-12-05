@@ -17,17 +17,17 @@ export function LoginPage({ onLogin }: LoginPageProps) {
   };
 
   return (
-    <div className="min-h-screen bg-zinc-950 flex items-center justify-center p-6">
+    <div className="min-h-screen bg-white dark:bg-zinc-950 flex items-center justify-center p-6">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[indigo-500] to-[indigo-400] rounded-2xl mb-6 shadow-lg shadow-[indigo-500]/20">
             <Zap className="w-8 h-8 text-white" />
           </div>
-          <h1 className="text-3xl font-semibold mb-3 text-zinc-100">Welcome to OmniBeam</h1>
-          <p className="text-base text-zinc-400">Multi-channel notifications made simple</p>
+          <h1 className="text-3xl font-semibold mb-3 text-zinc-900 dark:text-zinc-100">Welcome to OmniBeam</h1>
+          <p className="text-base text-zinc-600 dark:text-zinc-400">Multi-channel notifications made simple</p>
         </div>
 
-        <div className="bg-zinc-900 border border-zinc-900 rounded-2xl p-8 shadow-xl">
+        <div className="bg-zinc-100 dark:bg-zinc-900 border border-zinc-900 rounded-2xl p-8 shadow-xl">
           <form onSubmit={handleSubmit} className="space-y-5">
             <Input
               type="email"
@@ -49,9 +49,9 @@ export function LoginPage({ onLogin }: LoginPageProps) {
               <label className="flex items-center gap-2 cursor-pointer">
                 <input
                   type="checkbox"
-                  className="w-4 h-4 rounded border-neutral-700 bg-zinc-950 text-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-0"
+                  className="w-4 h-4 rounded border-neutral-700 bg-white dark:bg-zinc-950 text-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-0"
                 />
-                <span className="text-zinc-400 font-medium">Remember me</span>
+                <span className="text-zinc-600 dark:text-zinc-400 font-medium">Remember me</span>
               </label>
               <a href="#" className="text-indigo-500 hover:text-[indigo-400] transition-colors font-medium">
                 Forgot password?
@@ -66,10 +66,10 @@ export function LoginPage({ onLogin }: LoginPageProps) {
           <div className="mt-6">
             <div className="relative">
               <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-zinc-800"></div>
+                <div className="w-full border-t border-zinc-200 dark:border-zinc-800"></div>
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-3 bg-zinc-900 text-zinc-500 font-medium">Or continue with</span>
+                <span className="px-3 bg-zinc-100 dark:bg-zinc-900 text-zinc-500 font-medium">Or continue with</span>
               </div>
             </div>
 
@@ -106,11 +106,11 @@ export function LoginPage({ onLogin }: LoginPageProps) {
 
         <p className="mt-8 text-center text-xs text-neutral-600">
           By signing in, you agree to our{' '}
-          <a href="#" className="text-zinc-500 hover:text-zinc-400 transition-colors underline underline-offset-2">
+          <a href="#" className="text-zinc-500 hover:text-zinc-600 dark:text-zinc-400 transition-colors underline underline-offset-2">
             Terms of Service
           </a>{' '}
           and{' '}
-          <a href="#" className="text-zinc-500 hover:text-zinc-400 transition-colors underline underline-offset-2">
+          <a href="#" className="text-zinc-500 hover:text-zinc-600 dark:text-zinc-400 transition-colors underline underline-offset-2">
             Privacy Policy
           </a>
         </p>
