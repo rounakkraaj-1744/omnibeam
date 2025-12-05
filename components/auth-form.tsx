@@ -10,6 +10,7 @@ type AuthMode = "login" | "signup"
 type AuthMethod = "password" | "magiclink"
 
 import { useRouter } from "next/navigation"
+import { authClient } from "@/lib/auth-client"
 
 export function AuthForm() {
     const router = useRouter()
@@ -24,17 +25,43 @@ export function AuthForm() {
         e.preventDefault()
         setIsLoading(true)
 
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500))
-
-        console.log({ mode, method, email, password, name })
-        setIsLoading(false)
-        router.push("/dashboard")
+        try {
+            if (mode === "login") {
+                if (method === "magiclink") {
+                    await authClient.signIn.magicLink({
+                        email,
+                        callbackURL: "/dashboard",
+                    })
+                } else {
+                    const { error } = await authClient.signIn.email({
+                        email,
+                        password,
+                        callbackURL: "/dashboard",
+                    })
+                    if (error) throw error
+                }
+            } else {
+                const { error } = await authClient.signUp.email({
+                    email,
+                    password,
+                    name,
+                    callbackURL: "/dashboard",
+                })
+                if (error) throw error
+            }
+        } catch (error) {
+            console.error("Auth error:", error)
+            // Ideally show toast error here
+        } finally {
+            setIsLoading(false)
+        }
     }
 
-    const handleGoogleAuth = () => {
-        console.log("Google auth initiated")
-        router.push("/dashboard")
+    const handleGoogleAuth = async () => {
+        await authClient.signIn.social({
+            provider: "google",
+            callbackURL: "/dashboard",
+        })
     }
 
     return (

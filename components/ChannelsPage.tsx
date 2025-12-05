@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -42,8 +44,8 @@ export function ChannelsPage() {
                   <p className="text-xs text-zinc-500 mt-1">Powered by Resend</p>
                 </div>
               </div>
-              <Switch 
-                checked={emailEnabled} 
+              <Switch
+                checked={emailEnabled}
                 onChange={setEmailEnabled}
               />
             </div>
@@ -138,8 +140,8 @@ export function ChannelsPage() {
                   <p className="text-xs text-zinc-500 mt-1">Web Push via VAPID</p>
                 </div>
               </div>
-              <Switch 
-                checked={pushEnabled} 
+              <Switch
+                checked={pushEnabled}
                 onChange={setPushEnabled}
               />
             </div>
@@ -157,8 +159,8 @@ export function ChannelsPage() {
                     readOnly
                     className="flex-1 px-4 py-2.5 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg text-zinc-700 dark:text-zinc-300 text-sm"
                   />
-                  <Button 
-                    variant="ghost" 
+                  <Button
+                    variant="ghost"
                     size="sm"
                     onClick={() => copyToClipboard(vapidKey)}
                   >
@@ -193,8 +195,8 @@ export function ChannelsPage() {
                   <p className="text-xs text-zinc-500 mt-1">Powered by Twilio</p>
                 </div>
               </div>
-              <Switch 
-                checked={smsEnabled} 
+              <Switch
+                checked={smsEnabled}
                 onChange={setSmsEnabled}
               />
             </div>

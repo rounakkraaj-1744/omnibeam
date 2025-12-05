@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -67,8 +69,8 @@ export function SendNotificationPage() {
                       type="button"
                       onClick={() => toggleChannel(channel.id)}
                       className={`relative p-4 rounded-lg border-2 transition-all ${isSelected
-                          ? `${channel.bgColor} ${channel.borderColor}`
-                          : 'bg-zinc-100 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 hover:border-neutral-700'
+                        ? `${channel.bgColor} ${channel.borderColor}`
+                        : 'bg-zinc-100 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 hover:border-neutral-700'
                         }`}
                     >
                       <div className="flex flex-col items-center gap-2">
